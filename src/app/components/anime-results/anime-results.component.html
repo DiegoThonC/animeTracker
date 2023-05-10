@@ -1,0 +1,21 @@
+<div *ngIf="animeResults.length > 0; else nodata">
+    <h2>Select your favorite animes</h2>
+    <div class="row g-3 justify-content-center pt-2">
+        <div class="col-lg-3 col-md-4 col-10" *ngFor="let anime of animeResults">
+            <div class="image-area">
+                <img [src]="anime.images['webp'].large_image_url" class="" alt="...">
+                <div class="image-text">
+                    <h3 class="card-title">{{ anime.title }}</h3>
+                    <p class="card-text">{{ anime.synopsis?.slice(0, 200) }}...</p>
+                    <div class="buttons">
+                        <a [routerLink]="['/infoAnime', anime.mal_id]" class="card-link btn btn-outline-light">Information</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #nodata>
+    <h2>No anime with the description</h2>
+</ng-template>

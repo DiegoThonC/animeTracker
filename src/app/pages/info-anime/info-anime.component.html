@@ -1,0 +1,105 @@
+<div class="space-1 row gap-3 gap-md-0">
+    <div class="col-md-4 col-12 px-2 d-flex flex-column">
+        <div class="d-flex d-md-none justify-content-between align-items-center mb-3">
+            <h1>{{ anime?.title ?? 'No title available' }}</h1>
+            <a class="btn btn-outline-light" (click)="addAnime(anime)">Add to your watch list</a>
+        </div>
+        <img [src]="anime?.images['jpg'].large_image_url" class="img-fluid rounded-2" alt="">
+        <div class="detail p-3 d-flex flex-column">
+            <div class="alt-titles">
+                <h3>Alternative Titles</h3>
+                <span class="d-flex gap-2" *ngFor="let titles of anime?.titles">
+                    <span>{{ titles.type }}:</span>
+                    <p>{{ titles.title }}</p>
+                </span>
+            </div>
+            <hr>
+            <div class="info">
+                <h3>Information</h3>
+                <span class="d-flex gap-2">Type: 
+                    <p>{{ anime?.type ?? 'Not found' }}</p>
+                </span>
+                <span class="d-flex gap-2">Episodes:
+                    <p>{{ anime?.episodes ?? 'Not found' }}</p>
+                </span>
+                <span class="d-flex gap-2">Status: 
+                    <p>{{ anime?.status ?? 'Not found' }}</p>
+                </span>
+                <span class="d-flex gap-2">Aired:
+                    <p>{{ anime?.aired.string ?? 'Not found' }}</p>
+                </span>
+                <span class="d-flex gap-2">Producers: 
+                    <p>{{ anime?.producers[0]?.name ?? 'Not found' }}</p>
+                </span>
+                <span class="d-flex gap-2">Licensors:
+                    <div class="d-flex flex-column">
+                        <p *ngFor="let licensor of anime?.licensors"> {{ licensor.name }} </p>
+                        <p *ngIf="!anime?.licensors.length"> Not found </p>
+                    </div>
+                </span>
+                <span class="d-flex gap-2">Source:
+                    <p>{{ anime?.source ?? 'Not found' }}</p>
+                </span>
+                <span class="d-flex gap-2">Genres:
+                    <div class="d-flex flex-column">
+                        <p *ngFor="let genre of anime?.genres">{{ genre.name }}</p>
+                        <p *ngIf="!anime?.genres.length"> Not found </p>
+                    </div>
+                </span>
+                <span class="d-flex gap-2">Themes:
+                    <div class="d-flex flex-column">
+                        <p *ngFor="let theme of anime?.themes">{{ theme.name }}</p>
+                        <p *ngIf="!anime?.themes.length"> Not found </p>
+                    </div>
+                </span>
+                <span class="d-flex gap-2">Duration:
+                    <p>{{ anime?.duration ?? 'Not found' }}</p>
+                </span>
+                <span class="d-flex gap-2"> Studios:
+                    <div class="d-flex flex-column">
+                        <p *ngFor="let studio of anime?.studios">{{ studio.name | uppercase }}</p>
+                        <p *ngIf="!anime?.studios.length"> Not found </p>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="content col-md-8 col-12 d-flex flex-column px-2">
+        <div class="d-md-flex d-none justify-content-between align-items-center">
+            <h1>{{ anime?.title ?? 'No title available' }}</h1>
+            <a class="btn btn-outline-light" (click)="addAnime(anime)">Add to your watch list</a>
+        </div>
+        <div class="info-scoring d-flex justify-content-around align-items-center rounded-1 py-3">
+            <div class="score d-flex flex-column align-items-center">
+                <span>SCORE</span>
+                <span class="score-numbers">{{ anime?.score ?? 0 | number }}</span>
+                <p>{{ anime?.scored_by ?? 0 | number }} users</p>
+            </div>
+            <div class="ranked d-flex flex-column align-items-center">
+                <span>Ranked</span>
+                <span class="ranked-numbers">#{{ anime?.rank ?? 0 | number }}</span>
+            </div>
+            <div class="popularity d-flex flex-column align-items-center">
+                <span>Popularity</span>
+                <span class="popularity-numbers">#{{ anime?.popularity ?? 0 | number }}</span>
+            </div>
+            <div class="members d-flex flex-column align-items-center">
+                <span>Members</span>
+                <span class="members-numbers">{{ anime?.members ?? 0 | number }}</span>
+            </div>
+        </div>
+        <div class="synopsis pt-3">
+            <h1>Synopsis</h1>
+            <p class="description">{{ anime?.synopsis ?? 'No synopsis available' }} </p>
+        </div>
+        <div class="video pt-3">
+            <h2>Trailer</h2>
+            <video controls #videoPlayer class="w-100 p-3">
+                <source src="https://www.youtube.com/embed/qig4KOK2R2g?enablejsapi=1&wmode=opaque&autoplay=1" type="video/mp4" />
+                Browser not supported
+            </video>
+        </div>
+    </div>
+</div>
+
+

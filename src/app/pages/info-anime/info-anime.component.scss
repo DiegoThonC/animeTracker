@@ -1,0 +1,53 @@
+p, span {
+    margin: 0;
+}
+
+.space-1 {
+
+    .detail {
+        background-color: #181818;
+
+        h3 {
+            font-size: 1.5rem;
+        }
+        span p {
+            color: #6f7479;
+            font-weight: 600;
+        }
+    }
+
+    .content {
+        
+        .info-scoring {
+            background-color: #181818;
+            border: #272727 1px solid;
+    
+            .score, .ranked, .popularity, .members {
+                font-size: 14px;
+                
+                .score-numbers, .ranked-numbers, .popularity-numbers, .members-numbers {
+                    font-size: 25px;
+                    font-weight: 600;
+                }
+    
+                p {
+                    font-size: 10px;
+                }
+            }
+        }
+
+        .synopsis {
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .description {
+                font-size: 15px;
+                font-weight: 100;
+                text-align: justify;
+                font-style: italic;
+            }
+        }
+    }
+}

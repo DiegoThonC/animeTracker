@@ -1,0 +1,48 @@
+h2 {
+    color: #fef6f6;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.myAnime {
+
+    .anime {
+        background-color: #42514d;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+        h3 {
+            color: #fef6f6;
+            font-size: 2rem;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        button {
+            width: 37px;
+        }
+        
+        a {
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.4s;
+        }
+    }
+}
+
+.p1 {
+    color: #b3b1b1;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 30px 0 0 0;
+}
+
+.p2 {
+    color: #b3b1b1;
+    text-align: center;
+    font-weight: 600;
+    margin: 30px 0 0 0;
+}

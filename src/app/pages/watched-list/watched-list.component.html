@@ -1,0 +1,39 @@
+<h2 class="pb-4">Your watched anime list</h2>
+<div *ngIf="anime_selected.length > 0; else no_animes" class="myAnime d-flex flex-column pt-2 gap-3">
+    <div *ngFor="let anime of anime_selected" class="anime row d-md-flex align-items-start mb-3 p-2 rounded-3 g-3"
+        [ngStyle]="{'background-image': 'linear-gradient(rgb(19 19 30 / 81%), rgb(0 0 0 / 77%)), url(' + anime.image + ')', 
+                    'background-repeat': 'no-repeat',
+                    'background-size': 'cover'}">
+        <img [src]="anime.image" class="rounded-2 img-fluid col-md-3 d-none d-md-flex" alt="">
+        <div class="col-md-9">
+            <div class="row g-md-2 g-0">
+                <div class="col-md-11 col-10">
+                    <h3 class="font-weight-bold"> {{ anime.title }} </h3>
+                </div>
+                <div class="col-md-1 col-2">
+                    <a type="button" class="btn btn-outline-light float-end" (click)="deleteAnime(anime)">X</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col px-4 pt-2">
+                    <p> {{ anime.synopsis }} </p>
+                </div>
+            </div>
+            <span class="flex-1"></span>
+            <div class="row">
+                <div class="col-md-12 d-flex gap-3 align-items-center">
+                    <span class="episodes">{{ anime.watched_episodes }} episodes of {{ anime.total_episodes }} episodes</span>
+                    <button type="button" class="btn btn-outline-light" (click)="increaseWached(anime)" 
+                            [disabled]="anime?.watched_episodes === anime?.total_episodes"> + </button>
+                    <button type="button" class="btn btn-outline-light" (click)="decreaseWached(anime)" 
+                            [disabled]="anime?.watched_episodes === 0"> - </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #no_animes>
+    <p class="p1">You haven't added any anime to your watch list</p>
+    <p class="p2">Add some now!</p>
+</ng-template>
