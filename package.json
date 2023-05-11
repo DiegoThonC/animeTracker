@@ -1,6 +1,10 @@
 {
   "name": "anime-tracker",
   "version": "0.0.0",
+  "engines": {
+    "node": "16.x",
+    "npm": "7"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

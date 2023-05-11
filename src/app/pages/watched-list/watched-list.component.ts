@@ -34,7 +34,7 @@ export class WatchedListComponent {
   }
 
   deleteAnime(anime: NewAnime) {
-    const conf = confirm('Are you sure?');
+    const conf = confirm('Are you sure you want to delete this anime?');
     if (conf) {
       this.anime_selected = this.anime_selected.filter( animeDeleted => anime.id != animeDeleted.id );
       localStorage.setItem('anime_selected', JSON.stringify(this.anime_selected));
