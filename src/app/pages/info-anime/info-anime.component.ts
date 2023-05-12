@@ -52,8 +52,9 @@ export class InfoAnimeComponent implements OnInit {
       synopsis: anime.synopsis,
       watched_episodes: 0
     }
-    
-    this.animeService.animeSelected(newAnime);
+
+    this.anime_selected.push(newAnime);    
+    localStorage.setItem('anime_selected', JSON.stringify(this.anime_selected));
     this.router.navigate(['/watched-list']);
   }
 }

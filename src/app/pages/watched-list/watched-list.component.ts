@@ -1,25 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NewAnime } from 'src/app/interfaces/api_animes.model';
-import { AnimeService } from 'src/app/services/anime.service';
 
 @Component({
   selector: 'app-watched-list',
   templateUrl: './watched-list.component.html',
   styleUrls: ['./watched-list.component.scss']
 })
-export class WatchedListComponent {
+export class WatchedListComponent implements OnInit {
 
   anime_selected: NewAnime[] = [];
 
-  constructor(private animeService: AnimeService) {}
+  constructor() {}
 
   ngOnInit(): void {
     this.anime_selected = JSON.parse(localStorage.getItem('anime_selected') as any) || [];
-
-    this.animeService.getAnimeSelected().subscribe( resp => {
-      this.anime_selected.push(resp);
-      localStorage.setItem('anime_selected', JSON.stringify(this.anime_selected));
-    });
   }
 
   increaseWached(anime: NewAnime) {

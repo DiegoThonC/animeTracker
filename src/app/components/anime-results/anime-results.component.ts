@@ -12,7 +12,6 @@ export class AnimeResultsComponent implements OnInit, OnDestroy {
 
   animeResults: Anime[] = [];
   animeSubscription!: Subscription;
-  loading: boolean = false;
 
   constructor(private animeService: AnimeService) { }
 
@@ -21,7 +20,6 @@ export class AnimeResultsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.loading = true;
     this.animeService.getAllAnimes().subscribe(result => {
       this.animeService.addResultAnime(result.data);
     });
@@ -29,6 +27,5 @@ export class AnimeResultsComponent implements OnInit, OnDestroy {
     this.animeSubscription = this.animeService.getResultAnime().subscribe( resp => {
       this.animeResults = resp;
     });
-    this.loading = false;
   }
 }

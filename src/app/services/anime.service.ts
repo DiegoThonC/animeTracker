@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ReplaySubject, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 import { APIAnime, Anime, NewAnime } from '../interfaces/api_animes.model';
 
@@ -10,8 +10,7 @@ import { APIAnime, Anime, NewAnime } from '../interfaces/api_animes.model';
 export class AnimeService {
 
   private API_URL = 'https://api.jikan.moe/v4/anime';
-  private anime_response$: Subject<Anime[]> = new Subject<Anime[]>();
-  private anime_selected$: ReplaySubject<NewAnime> = new ReplaySubject<NewAnime>();
+  private anime_response$ = new Subject<Anime[]>();
 
   constructor(private http: HttpClient) { }
 
@@ -33,13 +32,5 @@ export class AnimeService {
 
   getResultAnime(): Observable<Anime[]> {
     return this.anime_response$.asObservable();
-  }
-
-  animeSelected(anime: NewAnime) {
-    this.anime_selected$.next(anime);
-  }
-
-  getAnimeSelected(): Observable<NewAnime> {
-    return this.anime_selected$.asObservable();
   }
 }
