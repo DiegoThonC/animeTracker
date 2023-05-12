@@ -95,7 +95,7 @@
         <div class="video pt-3">
             <h2>Trailer</h2>
             <video controls #videoPlayer class="w-100 p-3">
-                <source src="https://www.youtube.com/embed/qig4KOK2R2g?enablejsapi=1&wmode=opaque&autoplay=1" type="video/mp4" />
+                <source [src]="anime?.trailer.url" type="video/mp4" />
                 Browser not supported
             </video>
         </div>

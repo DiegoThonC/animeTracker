@@ -28,9 +28,6 @@ export class InfoAnimeComponent implements OnInit {
       )
       .subscribe((anime: APIAnime) => {
         this.anime = anime.data;
-
-        console.log(anime.data);
-        
       });
   }
 

@@ -57,3 +57,12 @@ h3 {
 .image-area:hover .image-text {
     transform: translateY(0);
 }
+
+a.btn {
+    border: 1px solid #f9ab00;
+
+    &:hover {
+        background-color: #f9ab00;
+        color: #181818;
+    }
+}

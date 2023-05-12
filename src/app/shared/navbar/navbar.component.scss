@@ -1,4 +1,17 @@
 .navbar {
     background-color: #1a191f;
     border: #272727 1px solid;
+
+    a.navbar-brand h1:hover {
+        color: #f9ab00;
+    }
+
+    a.btn {
+        border: 1px solid #f9ab00;
+
+        &:hover {
+            background-color: #f9ab00;
+            color: #181818;
+        }
+    }
 }

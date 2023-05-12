@@ -4,6 +4,15 @@ p, span {
 
 .space-1 {
 
+    a.btn {
+        border: 1px solid #f9ab00;
+
+        &:hover {
+            background-color: #f9ab00;
+            color: #181818;
+        }
+    }
+
     .detail {
         background-color: #181818;
 

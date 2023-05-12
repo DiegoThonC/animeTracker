@@ -14,7 +14,6 @@ export class WatchedListComponent {
   constructor(private animeService: AnimeService) {}
 
   ngOnInit(): void {
-
     this.anime_selected = JSON.parse(localStorage.getItem('anime_selected') as any) || [];
 
     this.animeService.getAnimeSelected().subscribe( resp => {
