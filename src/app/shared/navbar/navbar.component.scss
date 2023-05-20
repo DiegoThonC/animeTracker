@@ -37,18 +37,4 @@
             text-shadow: 1px 1px #222;
         }
     }
-
-    .navbar-toggler {
-
-        &-icon {
-            display: inline-block;
-            width: 1.5em;
-            height: 1.5em;
-            vertical-align: middle;
-            background-image: url(../../../assets/images/burger-menu-icon.svg);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 100%;
-        }
-    }
 }
