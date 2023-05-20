@@ -1,21 +1,23 @@
-<div *ngIf="animeResults.length > 0; else nodata">
-    <h2>Select your favorite animes</h2>
-    <div class="row g-3 justify-content-center pt-2">
-        <div class="col-lg-3 col-md-4 col-10" *ngFor="let anime of animeResults">
-            <div class="image-area">
-                <img [src]="anime.images['webp'].large_image_url" class="" alt="...">
-                <div class="image-text">
-                    <h3 class="card-title">{{ anime.title }}</h3>
-                    <p class="card-text">{{ anime.synopsis?.slice(0, 200) }}...</p>
-                    <div class="buttons">
-                        <a [routerLink]="['/infoAnime', anime.mal_id]" class="card-link btn btn-outline-light">Information</a>
-                    </div>
-                </div>
+<div class="row justify-content-center mt-3 g-3" *ngIf="animeResults.length > 0; else nodata">
+    <h2 class="mt-5 d-flex justify-content-center justify-content-md-start">Select your favorite animes</h2>
+
+    <app-paginator></app-paginator>
+
+    <div class="image-area col-lg-3 col-md-6 col-10" *ngFor="let anime of animeResults">
+        <img [src]="anime.images['webp'].large_image_url" class="image-area_img" alt="...">
+        <div class="image-area_text_container p-3">
+            <h3 class="image-area_text_container_title">{{ anime.title }}</h3>
+            <p class="image-area_text_container_text">{{ anime.synopsis?.slice(0, 100) }}...</p>
+            <div class="buttons">
+                <a [routerLink]="['/infoAnime', anime.mal_id]" class="image-area_text_container_buttons_link p-2">Information</a>
             </div>
         </div>
     </div>
+
+    <app-paginator></app-paginator>
+
 </div>
 
 <ng-template #nodata>
-    <h2>No anime with the description</h2>
+    <h2 class="mt-5 text-center">No anime with the description</h2>
 </ng-template>

@@ -1,23 +1,30 @@
+@import '../../../assets/scss/general';
 
 h1 {
-    font-size: 4rem;
-}
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 600;
 
-span {
-    font-size: 2.5rem;
-}
-
-form {
-    input {
-        appearance: none;
-        outline: none;
-        border: 1px solid #f9ab00;
-        background: transparent;
-        display: block;
-        color: #888;
-        font-size: 1.125rem;
-        width: 100%;
+    @include media-breakpoint-down(sm) {
+        font-size: 2rem;
     }
 }
 
+span {
+    font-size: 2rem;
 
+    @include media-breakpoint-down(sm) {
+        font-size: 1.5rem;
+    }
+}
+
+input {
+    outline: none;
+    box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+    color: black;
+    font-size: 1.125rem;
+    width: 100%;
+    background: #fff;
+    display: block;
+    margin: 0;
+}

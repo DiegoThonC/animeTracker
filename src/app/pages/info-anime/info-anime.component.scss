@@ -1,61 +1,73 @@
+@import '../../../assets/scss/general';
+
 p, span {
     margin: 0;
 }
 
-.space-1 {
+.info-container {
 
-    a.btn {
-        border: 1px solid #f9ab00;
+    .link {
+        @include box-shadow-2;
+        border-radius: 0;
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
 
-        &:hover {
-            background-color: #f9ab00;
-            color: #181818;
+        &:active {
+            @include box-shadow;
+            text-shadow: 1px 1px #222;
+            cursor: progress;
+        }
+
+        &:focus {
+            outline: 1px dotted #000;
+            outline-offset: -4px;
         }
     }
 
-    .detail {
-        background-color: #181818;
+    &_detail {
+        @include box-shadow;
 
         h3 {
             font-size: 1.5rem;
         }
+
         span p {
-            color: #6f7479;
+            color: #000;
             font-weight: 600;
         }
     }
 
-    .content {
+    &_content {
+
+        &_title {
+            font-size: 3rem;
+            text-transform: uppercase;
+        }
         
-        .info-scoring {
-            background-color: #181818;
-            border: #272727 1px solid;
+        &_info-scoring {
+            @include box-shadow;
     
-            .score, .ranked, .popularity, .members {
-                font-size: 14px;
+            &_score {
+                font-size: 1.4rem;
                 
-                .score-numbers, .ranked-numbers, .popularity-numbers, .members-numbers {
+                &_numbers {
                     font-size: 25px;
                     font-weight: 600;
-                }
-    
-                p {
-                    font-size: 10px;
                 }
             }
         }
 
-        .synopsis {
+        &_synopsis {
 
             h2 {
                 font-size: 1.2rem;
             }
 
-            .description {
+            &_description {
                 font-size: 15px;
                 font-weight: 100;
                 text-align: justify;
-                font-style: italic;
             }
         }
     }

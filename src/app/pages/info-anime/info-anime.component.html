@@ -1,11 +1,11 @@
-<div class="space-1 row gap-3 gap-md-0">
+<div class="info-container row gap-3 gap-md-0">
     <div class="col-md-4 col-12 px-2 d-flex flex-column">
         <div class="d-flex d-md-none justify-content-between align-items-center mb-3">
-            <h1>{{ anime?.title ?? 'No title available' }}</h1>
-            <a class="btn btn-outline-light" (click)="addAnime(anime)">Add to your watch list</a>
+            <h1 class="info-container_content_title">{{ anime?.title ?? 'No title available' }}</h1>
+            <a class="link p-2 text-center" (click)="addAnime(anime)">Add to your watched list</a>
         </div>
-        <img [src]="anime?.images['jpg'].large_image_url" class="img-fluid rounded-2" alt="">
-        <div class="detail p-3 d-flex flex-column">
+        <img [src]="anime?.images['jpg'].large_image_url" class="img-fluid" alt="">
+        <div class="info-container_detail p-3 d-flex flex-column">
             <div class="alt-titles">
                 <h3>Alternative Titles</h3>
                 <span class="d-flex gap-2" *ngFor="let titles of anime?.titles">
@@ -64,33 +64,32 @@
             </div>
         </div>
     </div>
-    <div class="content col-md-8 col-12 d-flex flex-column px-2">
-        <div class="d-md-flex d-none justify-content-between align-items-center">
-            <h1>{{ anime?.title ?? 'No title available' }}</h1>
-            <a class="btn btn-outline-light" (click)="addAnime(anime)">Add to your watch list</a>
+    <div class="info-container_content col-md-8 col-12 d-flex flex-column px-2">
+        <div class="d-md-flex d-none justify-content-between align-items-start">
+            <h1 class="info-container_content_title">{{ anime?.title ?? 'No title available' }}</h1>
+            <a class="link mt-2 p-2 text-center" (click)="addAnime(anime)">Add to your watched list</a>
         </div>
-        <div class="info-scoring d-flex justify-content-around align-items-center rounded-1 py-3">
-            <div class="score d-flex flex-column align-items-center">
-                <span>SCORE</span>
-                <span class="score-numbers">{{ anime?.score ?? 0 | number }}</span>
-                <p>{{ anime?.scored_by ?? 0 | number }} users</p>
+        <div class="info-container_content_info-scoring row gx-0 justify-content-around align-items-center py-3">
+            <div class="info-container_content_info-scoring_score col-md-3 col-6 d-flex flex-column align-items-center">
+                <span> {{ 'score' | uppercase }} </span>
+                <span class="info-container_content_info-scoring_score_numbers">{{ anime?.score ?? 0 | number }}</span>
             </div>
-            <div class="ranked d-flex flex-column align-items-center">
-                <span>Ranked</span>
-                <span class="ranked-numbers">#{{ anime?.rank ?? 0 | number }}</span>
+            <div class="info-container_content_info-scoring_score col-md-3 col-6 d-flex flex-column align-items-center">
+                <span> {{ 'ranked' | uppercase }} </span>
+                <span class="info-container_content_info-scoring_score_numbers">#{{ anime?.rank ?? 0 | number }}</span>
             </div>
-            <div class="popularity d-flex flex-column align-items-center">
-                <span>Popularity</span>
-                <span class="popularity-numbers">#{{ anime?.popularity ?? 0 | number }}</span>
+            <div class="info-container_content_info-scoring_score col-md-3 col-6 d-flex flex-column align-items-center">
+                <span> {{ 'popularity' | uppercase }} </span>
+                <span class="info-container_content_info-scoring_score_numbers">#{{ anime?.popularity ?? 0 | number }}</span>
             </div>
-            <div class="members d-flex flex-column align-items-center">
-                <span>Members</span>
-                <span class="members-numbers">{{ anime?.members ?? 0 | number }}</span>
+            <div class="info-container_content_info-scoring_score col-md-3 col-6 d-flex flex-column align-items-center">
+                <span> {{ 'members' | uppercase }} </span>
+                <span class="info-container_content_info-scoring_score_numbers">{{ anime?.members ?? 0 | number }}</span>
             </div>
         </div>
-        <div class="synopsis pt-3">
+        <div class="info-container_content_synopsis pt-3">
             <h1>Synopsis</h1>
-            <p class="description">{{ anime?.synopsis ?? 'No synopsis available' }} </p>
+            <p class="info-container_content_synopsis_description">{{ anime?.synopsis ?? 'No synopsis available' }} </p>
         </div>
         <div class="video pt-3">
             <h2>Trailer</h2>

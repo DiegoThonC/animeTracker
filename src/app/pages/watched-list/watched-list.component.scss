@@ -1,48 +1,63 @@
-h2 {
-    color: #fef6f6;
+@import '../../../assets/scss/general';
+
+h1 {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
     font-weight: 600;
 }
 
-.myAnime {
+.my_anime {
+    color: $white-01;
 
-    .anime {
-        background-color: #42514d;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    &-anime {
+        background-color: $gray-02;
+        box-shadow: inset 2px 2px #fff, 2px 2px #4d4b4b;
 
         h3 {
-            color: #fef6f6;
-            font-size: 2rem;
+            font-size: 2.2rem;
         }
 
         p {
             text-align: justify;
         }
-
-        button {
-            width: 37px;
-        }
         
-        a {
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.4s;
+        button {
+            width: 2rem;
+            height: 2rem;
+            background-color: $gray-02;
+            box-shadow: -2px -2px #e0dede, -2px 0 #e0dede, 0 -2px #e0dede, -4px -4px white, -4px 0 white, 0 -4px white, 2px 2px #818181, 0 2px #818181, 2px 0 #818181, 2px -2px #e0dede, -2px 2px #818181, -4px 2px white, -4px 4px black, 4px 4px black, 4px 0 black, 0 4px black, 2px -4px white, 4px -4px black;
+            font-weight: 600;
+            font-family: "Arial Black", sans-serif;
+            padding: 2px 0;
+            
+            &:active {
+                @include box-shadow;
+                text-shadow: 1px 1px #222;
+                cursor: progress;
+            }
+
+            &:focus {
+                outline: 1px dotted #000;
+                outline-offset: -4px;
+            }
+
+            &:disabled {
+                text-shadow: 1px 1px 0 #fff;
+                color: grey;
+            }
         }
     }
 }
 
 .p1 {
-    color: #b3b1b1;
     text-align: center;
     font-weight: 600;
     font-size: 1.5rem;
-    margin: 30px 0 0 0;
+    margin: 1.875rem 0 0 0;
 }
 
 .p2 {
-    color: #b3b1b1;
     text-align: center;
     font-weight: 600;
-    margin: 30px 0 0 0;
+    margin: 1.875rem 0 0 0;
 }

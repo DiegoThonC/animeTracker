@@ -1,17 +1,54 @@
-.navbar {
-    background-color: #1a191f;
-    border: #272727 1px solid;
+@import './../../../assets/scss/general';
 
-    a.navbar-brand h1:hover {
-        color: #f9ab00;
+.header {
+    background: linear-gradient(90deg, navy, #1084d0);
+    
+    &-text {
+        color: #fff;
+        font-weight: 700;
+        margin: 0;
+    }
+}
+
+.options {
+    box-shadow: 0 2px #808280, 0 4px white;
+    background-color: $gray-02;
+    position: relative;
+
+    &::before {
+        content: '';
+        width: 2px;
+        height: calc(100% - 1rem);
+        position: absolute;
+        background: #f2f2f2;
+        box-shadow: 1px 1px 0 #818181;
+        left: 0.5rem;
+        top: 0.5rem;
     }
 
-    a.btn {
-        border: 1px solid #f9ab00;
+    &_item {
+        color: #4c4848;
+        background-color: $gray-02;
+        border-radius: 0;
+        text-decoration: none;
 
-        &:hover {
-            background-color: #f9ab00;
-            color: #181818;
+        &:active {
+            @include box-shadow;
+            text-shadow: 1px 1px #222;
+        }
+    }
+
+    .navbar-toggler {
+
+        &-icon {
+            display: inline-block;
+            width: 1.5em;
+            height: 1.5em;
+            vertical-align: middle;
+            background-image: url(../../../assets/images/burger-menu-icon.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
         }
     }
 }

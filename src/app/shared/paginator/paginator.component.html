@@ -1,0 +1,8 @@
+<div class="d-flex col-12 justify-content-md-end justify-content-center gap-3 align-items-center py-2">
+    <div class="d-md-flex gap-3 d-none">
+        <p>Current Page: {{ pagination.current_page }}</p>
+        <p>Items per Page: {{ pagination.items.per_page }}</p>
+    </div>
+    <button [disabled]="pagination.current_page === 1" class="border-0 rounded-0 p-1" (click)="goToPreviousPage()">Previous Page</button>
+    <button [disabled]="!pagination.has_next_page" class="border-0 rounded-0 p-1" (click)="goToNextPage()">Next Page</button>
+</div>

@@ -12,6 +12,7 @@ export class SearchAnimeComponent implements OnInit, OnDestroy {
   @ViewChild('searchTerm', { static: true }) searchTerm!: ElementRef;
 
   animeSubscription!: Subscription
+  currentPage: number = 1;
 
   constructor(private animeService: AnimeService) { }
 
@@ -22,15 +23,16 @@ export class SearchAnimeComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.animeSubscription = fromEvent<Event>(this.searchTerm.nativeElement, 'keyup').pipe(
       map((event: Event) => {
-        const searchTerm = (event.target as HTMLInputElement).value;
-        return searchTerm;
+        return (event.target as HTMLInputElement).value;
       }),
-      filter((searchTerm: string) => searchTerm.length > 3),
+      filter((searchTerm: string) => (searchTerm.length > 3 || searchTerm.length === 0)),
       debounceTime(500),
       distinct(),
-      switchMap((searchTerm: string) => this.animeService.getAnimesByTerm(searchTerm))
+      switchMap((searchTerm: string) => this.animeService.getAnimesByTerm(searchTerm, this.currentPage))
     ).subscribe(result => {
       this.animeService.addResultAnime(result.data);
+      this.animeService.addCurrentPage(result.pagination);
+      this.animeService.setTerm(this.searchTerm.nativeElement.value);
     })
   }
 }
