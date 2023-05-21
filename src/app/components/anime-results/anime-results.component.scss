@@ -6,12 +6,10 @@ h2 {
 
 .image-area {
     text-align: center;
-    color: $white-01;
     position: relative;
     overflow: hidden;
 
     &_img {
-        width: 100%;
         height: 420px;
     }
 }
@@ -40,6 +38,7 @@ h2 {
     }
 
     &_text_container {
+        color: $white-01;
         margin-bottom: 20px;
         bottom: 0;
         z-index: 1;
@@ -59,16 +58,14 @@ h2 {
 
         &_buttons_link {
             background-color: $gray-02;
-            @include box-shadow-2;
-            border-radius: 0;
             text-decoration: none;
             color: #000;
+            @include box-shadow-2;
         
             &:active {
-                background-color: $gray-02;
-                @include box-shadow;
                 text-shadow: 1px 1px #222;
                 cursor: progress;
+                @include box-shadow;
             }
         }
     }

@@ -4,7 +4,7 @@
     <app-paginator></app-paginator>
 
     <div class="image-area col-lg-3 col-md-6 col-10" *ngFor="let anime of animeResults">
-        <img [src]="anime.images['webp'].large_image_url" class="image-area_img" alt="...">
+        <img [src]="anime.images['webp'].large_image_url" class="image-area_img w-100" alt="...">
         <div class="image-area_text_container p-3">
             <h3 class="image-area_text_container_title">{{ anime.title }}</h3>
             <p class="image-area_text_container_text">{{ anime.synopsis?.slice(0, 100) }}...</p>

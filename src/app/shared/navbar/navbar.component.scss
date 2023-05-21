@@ -12,7 +12,6 @@
 
 .options {
     box-shadow: 0 2px #808280, 0 4px white;
-    background-color: $gray-02;
     position: relative;
 
     &::before {
@@ -28,7 +27,6 @@
 
     &_item {
         color: #4c4848;
-        background-color: $gray-02;
         border-radius: 0;
         text-decoration: none;
 

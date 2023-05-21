@@ -7,16 +7,15 @@ p, span {
 .info-container {
 
     .link {
-        @include box-shadow-2;
-        border-radius: 0;
         color: #000;
         text-decoration: none;
         cursor: pointer;
+        @include box-shadow-2;
 
         &:active {
-            @include box-shadow;
             text-shadow: 1px 1px #222;
             cursor: progress;
+            @include box-shadow;
         }
 
         &:focus {
@@ -27,10 +26,6 @@ p, span {
 
     &_detail {
         @include box-shadow;
-
-        h3 {
-            font-size: 1.5rem;
-        }
 
         span p {
             color: #000;
@@ -52,7 +47,7 @@ p, span {
                 font-size: 1.4rem;
                 
                 &_numbers {
-                    font-size: 25px;
+                    font-size: 1.5rem;
                     font-weight: 600;
                 }
             }
@@ -60,12 +55,12 @@ p, span {
 
         &_synopsis {
 
-            h2 {
+            h3 {
                 font-size: 1.2rem;
             }
 
             &_description {
-                font-size: 15px;
+                font-size: 0.9375rem;
                 font-weight: 100;
                 text-align: justify;
             }

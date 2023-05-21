@@ -7,7 +7,7 @@
         <img [src]="anime?.images['jpg'].large_image_url" class="img-fluid" alt="">
         <div class="info-container_detail p-3 d-flex flex-column">
             <div class="alt-titles">
-                <h3>Alternative Titles</h3>
+                <h2>Alternative Titles</h2>
                 <span class="d-flex gap-2" *ngFor="let titles of anime?.titles">
                     <span>{{ titles.type }}:</span>
                     <p>{{ titles.title }}</p>
@@ -88,11 +88,11 @@
             </div>
         </div>
         <div class="info-container_content_synopsis pt-3">
-            <h1>Synopsis</h1>
+            <h2>Synopsis</h2>
             <p class="info-container_content_synopsis_description">{{ anime?.synopsis ?? 'No synopsis available' }} </p>
         </div>
         <div class="video pt-3">
-            <h2>Trailer</h2>
+            <h3>Trailer</h3>
             <video controls #videoPlayer class="w-100 p-3">
                 <source [src]="anime?.trailer.url" type="video/mp4" />
                 Browser not supported
