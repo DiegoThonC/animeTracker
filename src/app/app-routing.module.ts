@@ -6,13 +6,19 @@ import { WatchedListComponent } from './pages/watched-list/watched-list.componen
 
 const routes: Routes = [
   {
-    path: '', component: HomeComponent,
+    path: '', redirectTo: "/home", pathMatch: "full",
+  },
+  {
+    path: 'home', component: HomeComponent,
   },
   {
     path: 'infoAnime/:id', component: InfoAnimeComponent
   },
   {
     path: 'watched-list', component: WatchedListComponent
+  },
+  {
+    path: '**', redirectTo: "/home", pathMatch: "full",
   }
 ];
 

@@ -17,7 +17,9 @@ export class SearchAnimeComponent implements OnInit, OnDestroy {
   constructor(private animeService: AnimeService) { }
 
   ngOnDestroy(): void {
-    this.animeSubscription.unsubscribe();
+    if (this.animeSubscription) {
+      this.animeSubscription.unsubscribe();
+    }
   }
 
   ngOnInit(): void {

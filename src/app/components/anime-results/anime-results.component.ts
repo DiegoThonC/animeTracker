@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Anime, Pagination } from 'src/app/interfaces/api_animes.model';
+import { Anime } from 'src/app/interfaces/api_animes.model';
 import { AnimeService } from 'src/app/services/anime.service';
 
 @Component({
@@ -12,17 +12,18 @@ export class AnimeResultsComponent implements OnInit, OnDestroy {
 
   animeResults: Anime[] = [];
   animeSubscription!: Subscription;
-  current_page: number = 1;
 
   constructor(private animeService: AnimeService) {
-    this.animeService.getAllAnimes(this.current_page).subscribe( result => {
+    this.animeService.getAllAnimes().subscribe( result => {
       this.animeService.addResultAnime(result.data);
       this.animeService.addCurrentPage(result.pagination);
     });
   }
 
   ngOnDestroy(): void {
-    this.animeSubscription.unsubscribe();
+    if (this.animeSubscription) {
+      this.animeSubscription.unsubscribe();
+    }
   }
 
   ngOnInit(): void {

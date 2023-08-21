@@ -16,7 +16,7 @@ export class AnimeService {
 
   constructor(private http: HttpClient) { }
 
-  getAllAnimes(current_page: number): Observable<APIAnime> {
+  getAllAnimes(current_page: number = 1): Observable<APIAnime> {
     return this.http.get<APIAnime>(`${this.API_URL}?page=${current_page}`);
   }
 
